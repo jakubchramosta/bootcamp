@@ -4,12 +4,12 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 
 # Copy dependency files
-COPY package*.json ./
+COPY package*.json pnpm-lock.yaml ./
 
 RUN corepack enable
 
-# Install dependencies
-RUN pnpm install
+# Install dependencies (including devDependencies needed for build)
+RUN pnpm install --frozen-lockfile
 
 # Copy project files
 COPY . .
@@ -32,4 +32,4 @@ COPY --from=builder /app/build ./build
 EXPOSE 3000
 
 # Start app
-CMD ["node", "build/server.js"]
+CMD ["node", "--enable-source-maps", "build/index.js"]
