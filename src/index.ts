@@ -1,14 +1,16 @@
-import express from 'express'
-import helloRouter from './router/hello.router.js'
-import gitHubRouter from './router/gitHub.router.js'
+import express from "express";
+import helloRouter from "./router/hello.router.js";
+import gitHubRouter from "./router/gitHub.router.js";
 
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
-app.use('/hello', helloRouter)
+app.use(express.json());
 
-app.use('/github', gitHubRouter)
+app.use("/hello", helloRouter);
+
+app.use("/github", gitHubRouter);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});
