@@ -26,10 +26,10 @@ WORKDIR /app
 # Copy only needed files from build stage
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/build ./build
 
 # Expose port
 EXPOSE 3000
 
 # Start app
-CMD ["node", "dist/server.js"]
+CMD ["node", "build/server.js"]
