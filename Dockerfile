@@ -6,6 +6,8 @@ WORKDIR /app
 # Copy dependency files
 COPY package*.json ./
 
+RUN corepack enable
+
 # Install dependencies
 RUN pnpm install
 
