@@ -1,2 +1,2 @@
-export * from './hello.router.ts'
-export * from './gitHub.router.ts'
+export * from "./hello.router.js";
+export * from "./gitHub.router.js";

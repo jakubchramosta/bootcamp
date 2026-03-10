@@ -1,6 +1,6 @@
 import express from 'express'
-import helloRouter from './router/hello.router.ts'
-import gitHubRouter from './router/gitHub.router.ts'
+import helloRouter from './router/hello.router.js'
+import gitHubRouter from './router/gitHub.router.js'
 
 const app = express()
 const port = 3000
