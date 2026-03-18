@@ -29,7 +29,11 @@
     "incremental": true,
 
     /* Safety */
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+
+    /* Other */ 
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
   },
   "include": ["src"],
   "exclude": ["node_modules"]
